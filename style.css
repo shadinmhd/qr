@@ -121,6 +121,7 @@
     margin-top: 10%;
     color: var(--secondary-color);
     padding-left: 5%;
+    text-align: center;
 }
 
 .location {
