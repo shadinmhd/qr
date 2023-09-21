@@ -1,5 +1,6 @@
 :root {
     --primary-color: rgb(0, 21, 41);
+    --secondary-color: rgba(0, 21, 41,0.7);
 }
 
 * {
@@ -54,7 +55,7 @@
 .profession {
     font-size: large;
     font-weight: 300;
-    color: rgb(0, 21, 41);
+    color: var(--secondary-color);
 }
 
 .content {
@@ -92,7 +93,7 @@
 }
 
 .link>span {
-    color: #000;
+    color: var(--secondary-color);
 }
 
 .contact {
@@ -110,7 +111,7 @@
 
 #link-geo {
     margin-top: 10%;
-    color: rgba(0, 21, 41, 0.8);
+    color: var(--secondary-color);
 }
 
 .location {
@@ -128,15 +129,15 @@
     align-items: center;
     justify-content: center;
     padding: 15px;
-    font-weight: bold;
+    font-weight: 300;
     font-size: small;
     text-align: left;
-    color: rgb(0, 21, 41);
+    color: var(--secondary-color);
 }
 
 .service {
     margin-top: 10%;
-    color: rgb(0, 21, 41);
+    color: var(--secondary-color);
     border: #000 solid 1px;
     border-radius: 10px;
     padding: 10px;
@@ -145,7 +146,7 @@
     align-items: center;
     justify-content: center;
     font-size: small;
-    font-weight: bold;
+    font-weight: 300;
     width: 100%;
 }
 
@@ -162,8 +163,14 @@
 }
 
 span{
-    color: rgb(0, 21, 41);
-    opacity: 80%;
+    color: var(--secondary-color);
+}
+
+.about > .title{
+    transform: translateY(-95%);
+}
+.service > .title{
+    transform: translateY(-85%);
 }
 
 .title {
