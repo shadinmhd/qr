@@ -23,17 +23,21 @@
         </div>
         <div class="content">
             <div class="links">
-                <a href="#" class="link"><img src="images/call.png" alt=""><span>+ 91 8606 263 948</span></a>
-                <a href="#" class="link"><img src="images/email.png" alt=""><span>mnkmediaworks@gmail.com</span></a>
+                <a href="tel:+918606263948" class="link"><img src="images/call.png" alt=""><span>+ 91 8606 263
+                        948</span></a>
+                <a href="mailto:mnkmediaworks@gmail.com" class="link"><img src="images/email.png"
+                        alt=""><span>mnkmediaworks@gmail.com</span></a>
                 <a href="https://www.instagram.com/mnk_media_works_/" class="link"><img src="images/instagram.png"
                         alt=""><span>mnk_media_works_</span></a>
                 <a href="#" class="link"><img src="images/web.png" alt=""><span>www.mnkmediaworks.in</span></a>
                 <div class="contact">
-                    <a href="" class="link"><img src="images/save.png" alt=""><span>save</span></a>
-                    <a id="shareButton" href="" class="link"><img src="images/share.png" alt=""><span>share</span></a>
+                    <a href="" id="downloadButton" class="link"><img src="images/save.png" alt=""><span>save</span></a>
+                    <a id="shareButton" href="https://api.whatsapp.com/send?text=https://shadinmhd.github.io/qr"
+                        class="link"><img src="images/share.png" alt=""><span>share</span></a>
                 </div>
             </div>
-            <a href="" id="link-geo" class="link"><img src="images/location.png" alt=""><span>Ekarool, Balussery
+            <a href="https://www.google.com/maps/@11.4483499,75.878844,19.5z?authuser=0&entry=ttu" id="link-geo"
+                class="link"><img src="images/location.png" alt=""><span>Ekarool, Balussery
                     Kozhikode, kerala
                     673574</span></a>
             <iframe class="geo"
@@ -75,27 +79,23 @@
     </section>
     <footer class="footer">
         <a class="footer-icon" href=""><img src="images/call.png" alt=""> <span>Call</span></av>
-            <a class="footer-icon" href="https://wa.me/+918606263948"><img src="images/whatsapp.png" alt=""><span>Whatsapp</span></a>
+            <a class="footer-icon" href="https://wa.me/+918606263948"><img src="images/whatsapp.png"
+                    alt=""><span>Whatsapp</span></a>
             <a class="footer-icon" href=""><img src="images/instagram.png" alt=""> <span>Instagram</span></a>
             <a class="footer-icon" href=""><img src="images/email.png" alt=""> <span>Email</span></a>
             <a class="footer-icon" href=""><img src="images/location.png" alt=""> <span>Location</span></a>
     </footer>
     <script>
-        document.getElementById('shareButton').addEventListener('click', function () {
-            // Check if the Web Share API is available
-            if (navigator.share) {
-                navigator.share({
-                    text: '+918606263948',
-                })
-                    .then(() => {
-                        console.log('Share successful');
-                    })
-                    .catch((error) => {
-                        console.error('Share failed:', error);
-                    });
-            } else {
-                alert('Web Share API is not supported in this browser.');
-            }
+        document.getElementById('downloadButton').addEventListener('click', function () {
+            // Create a link element
+            var downloadLink = document.createElement('a');
+            downloadLink.href = './mnkmedia.vcf'; // Replace with the actual path to your contact file
+            downloadLink.download = 'mnkmedia.vcf'; // Specify the desired download filename
+
+            // Trigger a click event on the link to start the download
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
         });
     </script>
 </body>
