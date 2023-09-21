@@ -25,16 +25,17 @@
             <div class="links">
                 <a href="#" class="link"><img src="images/call.png" alt=""><span>+ 91 8606 263 948</span></a>
                 <a href="#" class="link"><img src="images/email.png" alt=""><span>mnkmediaworks@gmail.com</span></a>
-                <a href="https://www.instagram.com/mnk_media_works_/" class="link"><img src="images/instagram.png" alt=""><span>mnk_media_works_</span></a>
+                <a href="https://www.instagram.com/mnk_media_works_/" class="link"><img src="images/instagram.png"
+                        alt=""><span>mnk_media_works_</span></a>
                 <a href="#" class="link"><img src="images/web.png" alt=""><span>www.mnkmediaworks.in</span></a>
                 <div class="contact">
-                    <a href="" id="contactButton" class="link"><img src="images/save.png" alt=""><span>save</span></a>
-                    <a href="" class="link"><img src="images/share.png" alt=""><span>share</span></a>
+                    <a href="" class="link"><img src="images/save.png" alt=""><span>save</span></a>
+                    <a id="shareButton" href="" class="link"><img src="images/share.png" alt=""><span>share</span></a>
                 </div>
             </div>
             <a href="" id="link-geo" class="link"><img src="images/location.png" alt=""><span>Ekarool, Balussery
-                Kozhikode, kerala
-                673574</span></a>
+                    Kozhikode, kerala
+                    673574</span></a>
             <iframe class="geo"
                 src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2366.97718566425!2d75.87874559668465!3d11.448658120458214!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1695300404371!5m2!1sen!2sin"
                 width="600" height="450" allowfullscreen="" loading="lazy"
@@ -73,39 +74,27 @@
         </div>
     </section>
     <footer class="footer">
-        <a id="contactButton" class="footer-icon" href=""><img src="images/call.png" alt=""> <span>Call</span></av>
-        <a class="footer-icon" href="https://wa.me/+918606263948"><img src="images/whatsapp.png" alt=""> <span>Whatsapp</span></a>
-        <a class="footer-icon" href=""><img src="images/instagram.png" alt=""> <span>Instagram</span></a>
-        <a class="footer-icon" href=""><img src="images/email.png" alt=""> <span>Email</span></a>
-        <a class="footer-icon" href=""><img src="images/location.png" alt=""> <span>Location</span></a>
+        <a class="footer-icon" href=""><img src="images/call.png" alt=""> <span>Call</span></av>
+            <a class="footer-icon" href="https://wa.me/+918606263948"><img src="images/whatsapp.png" alt=""><span>Whatsapp</span></a>
+            <a class="footer-icon" href=""><img src="images/instagram.png" alt=""> <span>Instagram</span></a>
+            <a class="footer-icon" href=""><img src="images/email.png" alt=""> <span>Email</span></a>
+            <a class="footer-icon" href=""><img src="images/location.png" alt=""> <span>Location</span></a>
     </footer>
     <script>
-        document.getElementById('contactButton').addEventListener('click', function() {
-            // Check if the navigator.contacts API is available (usually on mobile devices)
-            if (navigator.contacts) {
-                // Define your contact details
-                var contact = {
-                    displayName: 'Mnk media works',
-                    phoneNumbers: [
-                        {
-                            type: 'home',
-                            value: '+918606263948'
-                        }
-                    ]
-                    // You can add more fields like email, address, etc. as needed
-                };
-
-                // Create a new contact using the contacts API
-                var contactObj = navigator.contacts.create(contact);
-
-                // Save the contact
-                contactObj.save(function() {
-                    alert('Contact saved successfully!');
-                }, function(err) {
-                    alert('Error saving contact: ' + err);
-                });
+        document.getElementById('shareButton').addEventListener('click', function () {
+            // Check if the Web Share API is available
+            if (navigator.share) {
+                navigator.share({
+                    text: '+918606263948',
+                })
+                    .then(() => {
+                        console.log('Share successful');
+                    })
+                    .catch((error) => {
+                        console.error('Share failed:', error);
+                    });
             } else {
-                alert('The contacts API is not available on this device/browser.');
+                alert('Web Share API is not supported in this browser.');
             }
         });
     </script>
