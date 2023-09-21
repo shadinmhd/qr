@@ -186,7 +186,7 @@ span{
 footer {
     background: var(--primary-color);
     width: 100vw;
-    height: 100px;
+    height: 80px;
     display: flex;
     justify-content: space-around;
     align-items: center;
