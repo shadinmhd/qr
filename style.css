@@ -103,6 +103,14 @@
     gap: 10px;
 }
 
+.contact > .link:nth-child(1)> img{
+    width: 20%;
+}
+
+.contact > .link:nth-child(2) > img{
+    width: 15%;
+}
+
 .geo {
     border: #000 solid 1px;
     border-radius: 10px;
