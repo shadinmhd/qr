@@ -120,6 +120,7 @@
 #link-geo {
     margin-top: 10%;
     color: var(--secondary-color);
+    padding-left: 5%;
 }
 
 .location {
